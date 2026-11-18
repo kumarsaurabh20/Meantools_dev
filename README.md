@@ -1,4 +1,4 @@
-# Meantools — Development Version
+# MEANtools — Development Version
 
 This repository contains the development version of Meantools. It is under active development, with new functionality and improvements being added. Features and interfaces may change as they are tested and refined.
 
