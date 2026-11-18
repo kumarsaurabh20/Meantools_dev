@@ -1,0 +1,36 @@
+# Full development script collection, including experimental scripts.
+# Use Python 3.10 or 3.11 in a separate environment for this legacy-compatible set.
+# This is an import-based dependency manifest, not a fully tested lockfile.
+# For standalone HPC correlations only, use requirements-hpc.txt instead.
+-r requirements-hpc.txt
+
+# Older structural-search scripts use DataFrame.append and numpy.in1d.
+numpy<2
+pandas<2
+
+# Analysis, clustering, and dimensionality reduction.
+networkx
+scikit-learn
+markov-clustering
+umap-learn
+tqdm
+
+# Chemical structures and database search.
+rdkit
+requests
+
+# Plotting, network visualization, and SVG composition.
+matplotlib
+seaborn
+pyvis
+svgelements
+svgutils
+svg.py
+
+# Reaction likelihood models (gnn_som is bundled locally).
+# Install a platform-appropriate PyTorch build first if using CUDA.
+torch
+torch-geometric>=2,<3
+
+# IPython.display is imported by reaction_likelihoods.py and the notebook.
+ipython

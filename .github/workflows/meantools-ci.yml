@@ -1,0 +1,41 @@
+
+name: MEANtools CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax-checks:
+    name: Correlation syntax checks
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      # Step 3: Check routine correlation script
+      - name: Check routine correlation Python syntax
+        run: python -m py_compile corrMultiomics.py
+
+      # Step 4: Check HPC correlation script
+      - name: Check HPC correlation Python syntax
+        run: python -m py_compile HPC_test/corrMultiomics_HPC.py
+
+      # Step 5: Check HPC Bash script
+      - name: Check HPC submission script syntax
+        run: bash -n HPC_test/corrMultiomics.sh
+
