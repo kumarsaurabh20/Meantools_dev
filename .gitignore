@@ -1,0 +1,16 @@
+
+# Large MEANtools reference databases
+pfam_rules_df.csv
+test_db/format_database/all_small_rules.csv
+test_db/format_database/base_rules.csv
+test_db/chem_prop.tsv
+test_db/format_database/chem_prop.mm_treated.tsv
+
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Common temporary files
+.DS_Store
